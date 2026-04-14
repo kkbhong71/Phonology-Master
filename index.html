@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phonology Master | 공통국어1 3단원</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="config.js" onerror="window.APP_CONFIG={}"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --mint:#0d9488;--ml:#ccfbf1;--md:#0f766e;
+  --coral:#f97066;--cl:#fff1f0;
+  --amber:#d97706;--al:#fef9c3;
+  --sky:#0ea5e9;--sl:#e0f2fe;
+  --violet:#8b5cf6;--vl:#ede9fe;
+  --emerald:#10b981;--el:#d1fae5;
+  --rose:#e11d48;--rl:#ffe4e6;
+  --bg:#faf9f7;--bg2:#f3f1ed;--wh:#fff;
+  --tx:#1a1a1a;--t2:#555;--t3:#999;
+  --bd:#e5e2dc;--bd2:#d4d0c8;
+  --r:12px;--rl2:18px;
+  --sh:0 2px 8px rgba(0,0,0,.06);--shh:0 6px 20px rgba(0,0,0,.09);
+  --f:'Noto Sans KR',system-ui,sans-serif;--mo:'JetBrains Mono',monospace;
+}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--bg);color:var(--tx);min-height:100vh}
+::selection{background:var(--mint);color:#fff}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:9px}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+@keyframes dots{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
+.au{animation:up .4s ease both}
+.ctn{max-width:960px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border:none;border-radius:var(--r);cursor:pointer;font-family:var(--f);font-size:.87rem;font-weight:600;transition:all .15s}
+.btn:active{transform:scale(.96)}
+.bm{background:var(--mint);color:#fff}.bm:hover{background:var(--md)}
+.bo{background:var(--wh);color:var(--mint);border:1.5px solid var(--mint)}.bo:hover{background:var(--ml)}
+.bg2{background:none;color:var(--t2)}.bg2:hover{background:var(--bg2)}
+.bs{padding:6px 14px;font-size:.8rem}
+.bx{padding:4px 10px;font-size:.73rem;border-radius:8px}
+.cd{background:var(--wh);border:1.5px solid var(--bd);border-radius:var(--rl2);padding:24px;box-shadow:var(--sh);transition:all .2s}
+.cd:hover{box-shadow:var(--shh)}
+.cl{cursor:pointer}.cl:hover{border-color:var(--mint);transform:translateY(-2px)}
+.ba{display:inline-flex;align-items:center;gap:3px;padding:4px 11px;border-radius:99px;font-size:.72rem;font-weight:700}
+.b-m{background:var(--ml);color:var(--md)}.b-c{background:var(--cl);color:var(--coral)}.b-a{background:var(--al);color:var(--amber)}
+.b-s{background:var(--sl);color:var(--sky)}.b-v{background:var(--vl);color:var(--violet)}.b-e{background:var(--el);color:var(--emerald)}.b-r{background:var(--rl);color:var(--rose)}
+.inp{width:100%;padding:11px 15px;background:var(--wh);border:1.5px solid var(--bd);border-radius:var(--r);font-family:var(--f);font-size:.93rem;color:var(--tx);outline:none;transition:border .2s}
+.inp:focus{border-color:var(--mint);box-shadow:0 0 0 3px var(--ml)}
+.pb{height:7px;background:var(--bg2);border-radius:4px;overflow:hidden}.pb>div{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--mint),var(--emerald));transition:width .4s}
+.gr{display:grid;gap:16px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.ga{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+@media(max-width:768px){.g2,.g3{grid-template-columns:1fr}}
+.hd{position:sticky;top:0;z-index:50;background:rgba(250,249,247,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+.hdi{display:flex;align-items:center;justify-content:space-between;height:58px}
+.lo{display:flex;align-items:center;gap:9px;cursor:pointer}
+.lob{width:34px;height:34px;background:var(--mint);border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:.68rem}
+.lot{font-weight:800;font-size:.88rem}.los{font-size:.62rem;color:var(--t3);margin-top:-1px}
+.ts{display:flex;gap:3px;overflow-x:auto}
+.tb{padding:7px 13px;border-radius:9px;border:none;background:none;cursor:pointer;font-family:var(--f);font-size:.8rem;font-weight:500;color:var(--t2);transition:all .12s;white-space:nowrap}
+.tb:hover{background:var(--bg2)}.tb.on{background:var(--mint);color:#fff;font-weight:700}
+.st{display:flex;align-items:center;gap:10px;padding:11px 15px;background:var(--bg2);border-radius:var(--r);margin-bottom:7px;border-left:3px solid var(--mint)}
+.st .sf{font-family:var(--mo);font-size:1.08rem;font-weight:600}
+.st .sa{color:var(--mint);font-weight:900;font-size:1.1rem}
+.st .stt{font-family:var(--mo);font-size:1.08rem;font-weight:700;color:var(--coral)}
+.st .sr{font-size:.72rem;color:var(--t3);margin-left:auto;background:var(--wh);padding:3px 9px;border-radius:6px;border:1px solid var(--bd)}
+.qo{display:block;width:100%;text-align:left;padding:13px 16px;background:var(--wh);border:2px solid var(--bd);border-radius:var(--r);cursor:pointer;font-size:.93rem;transition:all .12s;font-family:var(--f);margin-bottom:7px}
+.qo:hover:not(.dn){border-color:var(--mint);background:var(--ml)}
+.qo.ok{border-color:var(--emerald);background:var(--el);color:var(--emerald)}
+.qo.ng{border-color:var(--rose);background:var(--rl);color:var(--rose);animation:shake .3s}
+.cb{display:flex;flex-direction:column;height:460px;background:var(--wh);border:1.5px solid var(--bd);border-radius:var(--rl2);overflow:hidden}
+.cms{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.bu{max-width:86%;padding:12px 16px;border-radius:16px;font-size:.9rem;line-height:1.75;word-break:keep-all}
+.bu.u{align-self:flex-end;background:var(--mint);color:#fff;border-bottom-right-radius:4px}
+.bu.ai{align-self:flex-start;background:var(--bg2);border-bottom-left-radius:4px}
+.bu pre{font-family:var(--mo);font-size:.78rem;background:var(--wh);padding:8px;border-radius:8px;margin:6px 0;overflow-x:auto;border:1px solid var(--bd)}
+.cft{display:flex;gap:8px;padding:12px;border-top:1px solid var(--bd);background:var(--bg)}
+.ld span{width:7px;height:7px;background:var(--mint);border-radius:50%;display:inline-block;margin:0 2px;animation:dots 1.2s infinite}
+.ld span:nth-child(2){animation-delay:.2s}.ld span:nth-child(3){animation-delay:.4s}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+const {useState, useEffect, useRef, Fragment} = React;
+const GAS = (window.APP_CONFIG && window.APP_CONFIG.GAS_URL) || '';
+
+async function gasCall(action, p) {
+  if (!GAS) return null;
+  var params = Object.assign({action: action}, p || {});
+  var qs = Object.keys(params).map(function(k){ return k + '=' + encodeURIComponent(params[k]); }).join('&');
+  try { var r = await fetch(GAS + '?' + qs); return await r.json(); } catch(e) { return null; }
+}
+
+/* ═══ 음운 변동 DB ═══ */
+const DB = {
+  "굽는":{p:"굼는",ty:"교체",sub:"비음화",st:[{f:"굽는",t:"굼는",r:"ㅂ→ㅁ (ㄴ앞)"}],law:"제18항"},
+  "국민":{p:"궁민",ty:"교체",sub:"비음화",st:[{f:"국민",t:"궁민",r:"ㄱ→ㅇ (ㅁ앞)"}],law:"제18항"},
+  "먹는":{p:"멍는",ty:"교체",sub:"비음화",st:[{f:"먹는",t:"멍는",r:"ㄱ→ㅇ (ㄴ앞)"}],law:"제18항"},
+  "잡는":{p:"잠는",ty:"교체",sub:"비음화",st:[{f:"잡는",t:"잠는",r:"ㅂ→ㅁ (ㄴ앞)"}],law:"제18항"},
+  "박물관":{p:"방물관",ty:"교체",sub:"비음화",st:[{f:"박물관",t:"방물관",r:"ㄱ→ㅇ (ㅁ앞)"}],law:"제18항"},
+  "국물":{p:"궁물",ty:"교체",sub:"비음화",st:[{f:"국물",t:"궁물",r:"ㄱ→ㅇ (ㅁ앞)"}],law:"제18항"},
+  "듣는다":{p:"든는다",ty:"교체",sub:"비음화",st:[{f:"듣는다",t:"든는다",r:"ㄷ→ㄴ (ㄴ앞)"}],law:"제18항"},
+  "원리":{p:"월리",ty:"교체",sub:"유음화",st:[{f:"원리",t:"월리",r:"ㄴ→ㄹ (ㄹ앞)"}],law:"제20항"},
+  "훈련":{p:"훌련",ty:"교체",sub:"유음화",st:[{f:"훈련",t:"훌련",r:"ㄴ→ㄹ"}],law:"제20항"},
+  "물놀이":{p:"물로리",ty:"교체",sub:"유음화",st:[{f:"물놀이",t:"물로리",r:"ㄴ→ㄹ (ㄹ뒤)"}],law:"제20항"},
+  "신라":{p:"실라",ty:"교체",sub:"유음화",st:[{f:"신라",t:"실라",r:"ㄴ→ㄹ (ㄹ앞)"}],law:"제20항"},
+  "논리":{p:"놀리",ty:"교체",sub:"유음화",st:[{f:"논리",t:"놀리",r:"ㄴ→ㄹ (ㄹ앞)"}],law:"제20항"},
+  "관람":{p:"괄람",ty:"교체",sub:"유음화",st:[{f:"관람",t:"괄람",r:"ㄴ→ㄹ"}],law:"제20항"},
+  "한라산":{p:"할라산",ty:"교체",sub:"유음화",st:[{f:"한라산",t:"할라산",r:"ㄴ→ㄹ"}],law:"제20항"},
+  "등산로":{p:"등산노",ty:"교체",sub:"ㄹ비음화(예외)",st:[{f:"등산로",t:"등산노",r:"ㄹ→ㄴ (2음절한자+ㄹ)"}],law:"제20항[다만]"},
+  "생산량":{p:"생산냥",ty:"교체",sub:"ㄹ비음화(예외)",st:[{f:"생산량",t:"생산냥",r:"ㄹ→ㄴ"}],law:"제20항[다만]"},
+  "같이":{p:"가치",ty:"교체",sub:"구개음화",st:[{f:"같이",t:"가치",r:"ㅌ+ㅣ→ㅊ (형식형태소)"}],law:"제17항"},
+  "굳이":{p:"구지",ty:"교체",sub:"구개음화",st:[{f:"굳이",t:"구지",r:"ㄷ+ㅣ→ㅈ"}],law:"제17항"},
+  "해돋이":{p:"해도지",ty:"교체",sub:"구개음화",st:[{f:"해돋이",t:"해도지",r:"ㄷ+ㅣ→ㅈ"}],law:"제17항"},
+  "팥이":{p:"파치",ty:"교체",sub:"구개음화",st:[{f:"팥이",t:"파치",r:"ㅌ+ㅣ→ㅊ"}],law:"제17항"},
+  "막국수":{p:"막꾹쑤",ty:"교체",sub:"된소리되기",st:[{f:"막국수",t:"막꾹쑤",r:"ㄱ뒤 ㄱ→ㄲ,ㅅ→ㅆ"}],law:"제23항"},
+  "국밥":{p:"국빱",ty:"교체",sub:"된소리되기",st:[{f:"국밥",t:"국빱",r:"ㄱ뒤 ㅂ→ㅃ"}],law:"제23항"},
+  "발달":{p:"발딸",ty:"교체",sub:"된소리되기",st:[{f:"발달",t:"발딸",r:"ㄹ뒤 ㄷ→ㄸ(한자)"}],law:"제26항"},
+  "실수":{p:"실쑤",ty:"교체",sub:"된소리되기",st:[{f:"실수",t:"실쑤",r:"ㄹ뒤 ㅅ→ㅆ(한자)"}],law:"제26항"},
+  "신고":{p:"신꼬",ty:"교체",sub:"된소리되기",st:[{f:"신고",t:"신꼬",r:"어간ㄴ뒤 ㄱ→ㄲ"}],law:"제24항"},
+  "파랗다":{p:"파ː라타",ty:"축약",sub:"거센소리되기",st:[{f:"파랗다",t:"파라타",r:"ㅎ+ㄷ→ㅌ"}],law:"제12항"},
+  "축하":{p:"추카",ty:"축약",sub:"거센소리되기",st:[{f:"축하",t:"추카",r:"ㄱ+ㅎ→ㅋ"}],law:"제12항[붙임1]"},
+  "잡히지":{p:"자피지",ty:"축약",sub:"거센소리되기",st:[{f:"잡히지",t:"자피지",r:"ㅂ+ㅎ→ㅍ"}],law:"제12항[붙임1]"},
+  "놓지":{p:"노치",ty:"축약",sub:"거센소리되기",st:[{f:"놓지",t:"노치",r:"ㅎ+ㅈ→ㅊ"}],law:"제12항"},
+  "놓고":{p:"노코",ty:"축약",sub:"거센소리되기",st:[{f:"놓고",t:"노코",r:"ㅎ+ㄱ→ㅋ"}],law:"제12항"},
+  "행복하게":{p:"행보카게",ty:"축약",sub:"거센소리되기",st:[{f:"행복하게",t:"행보카게",r:"ㄱ+ㅎ→ㅋ"}],law:"제12항[붙임1]"},
+  "아파":{p:"아파",ty:"탈락",sub:"모음탈락",st:[{f:"아프-+-아",t:"아파",r:"ㅡ탈락"}],law:"맞춤법18항"},
+  "잠가":{p:"잠가",ty:"탈락",sub:"모음탈락",st:[{f:"잠그-+-아",t:"잠가",r:"ㅡ탈락"}],law:"맞춤법18항"},
+  "기뻐서":{p:"기뻐서",ty:"탈락",sub:"모음탈락",st:[{f:"기쁘-+-어서",t:"기뻐서",r:"ㅡ탈락"}],law:"맞춤법18항"},
+  "써":{p:"써",ty:"탈락",sub:"모음탈락",st:[{f:"쓰-+-어",t:"써",r:"ㅡ탈락"}],law:"맞춤법18항"},
+  "여자":{p:"여자",ty:"탈락",sub:"두음법칙",st:[{f:"녀자",t:"여자",r:"녀→여(첫머리)"}],law:"맞춤법10항"},
+  "양심":{p:"양심",ty:"탈락",sub:"두음법칙",st:[{f:"량심",t:"양심",r:"량→양(첫머리)"}],law:"맞춤법11항"},
+  "역사":{p:"역사",ty:"탈락",sub:"두음법칙",st:[{f:"력사",t:"역사",r:"력→역(첫머리)"}],law:"맞춤법11항"},
+  "꽃만":{p:"꼰만",ty:"복합",sub:"끝소리규칙+비음화",st:[{f:"꽃만",t:"꼳만",r:"끝소리규칙 ㅊ→ㄷ"},{f:"꼳만",t:"꼰만",r:"비음화 ㄷ→ㄴ"}],law:"제9항+제18항"},
+  "낮잠":{p:"낟짬",ty:"복합",sub:"끝소리+된소리",st:[{f:"낮잠",t:"낟잠",r:"끝소리규칙 ㅈ→ㄷ"},{f:"낟잠",t:"낟짬",r:"된소리되기"}],law:"제9항+제23항"},
+  "깨끗한":{p:"깨끄탄",ty:"복합",sub:"끝소리+거센소리",st:[{f:"깨끗한",t:"깨끋한",r:"끝소리규칙 ㅅ→ㄷ"},{f:"깨끋한",t:"깨끄탄",r:"거센소리되기 ㄷ+ㅎ→ㅌ"}],law:"제9항+제12항"},
+  "따뜻한":{p:"따뜨탄",ty:"복합",sub:"끝소리+거센소리",st:[{f:"따뜻한",t:"따뜯한",r:"끝소리규칙 ㅅ→ㄷ"},{f:"따뜯한",t:"따뜨탄",r:"거센소리되기 ㄷ+ㅎ→ㅌ"}],law:"제9항+제12항"},
+  "닦는":{p:"당는",ty:"복합",sub:"끝소리+비음화",st:[{f:"닦는",t:"닥는",r:"끝소리규칙 ㄲ→ㄱ"},{f:"닥는",t:"당는",r:"비음화 ㄱ→ㅇ"}],law:"제9항+제18항"},
+  "밖":{p:"박",ty:"교체",sub:"끝소리규칙",st:[{f:"밖",t:"박",r:"ㄲ→ㄱ"}],law:"제9항"},
+  "낮":{p:"낟",ty:"교체",sub:"끝소리규칙",st:[{f:"낮",t:"낟",r:"ㅈ→ㄷ"}],law:"제9항"},
+  "꽃":{p:"꼳",ty:"교체",sub:"끝소리규칙",st:[{f:"꽃",t:"꼳",r:"ㅊ→ㄷ"}],law:"제9항"},
+  "무릎":{p:"무릅",ty:"교체",sub:"끝소리규칙",st:[{f:"무릎",t:"무릅",r:"ㅍ→ㅂ"}],law:"제9항"}
+};
+
+/* ═══ 퀴즈 ═══ */
+const QZ = [
+  {id:1,s:"음운",c:"비음화",q:"\"국물\"의 올바른 발음은?",o:["궁물","국물","궁뭘","국뭘"],a:0,e:"ㄱ→ㅇ(비음 ㅁ앞) 비음화(제18항)"},
+  {id:2,s:"음운",c:"유음화",q:"\"논리\"의 올바른 발음은?",o:["논리","놀리","논니","놀니"],a:1,e:"ㄴ→ㄹ(ㄹ앞) 유음화(제20항)"},
+  {id:3,s:"음운",c:"구개음화",q:"\"미닫이\"의 올바른 발음은?",o:["미다지","미다치","미닫이","미닫지"],a:0,e:"ㄷ+ㅣ(형식형태소)→ㅈ 구개음화(제17항)"},
+  {id:4,s:"음운",c:"거센소리되기",q:"\"놓고\"의 올바른 발음은?",o:["놓고","노꼬","노코","녹고"],a:2,e:"ㅎ+ㄱ→ㅋ 거센소리되기(제12항)"},
+  {id:5,s:"음운",c:"된소리되기",q:"한자어 \"실수\"의 올바른 발음은?",o:["실수","실쑤","싱수","신수"],a:1,e:"ㄹ뒤 ㅅ→ㅆ(한자) 된소리되기(제26항)"},
+  {id:6,s:"음운",c:"끝소리규칙",q:"\"낮\",\"낯\",\"낫\" 발음이 모두 [낟]인 현상은?",o:["비음화","음절의 끝소리 규칙","거센소리되기","유음화"],a:1,e:"ㅈ,ㅊ,ㅅ→대표음ㄷ(제9항)"},
+  {id:7,s:"음운",c:"복합",q:"\"꽃만\"의 발음 변동 과정은?",o:["꽃만→[꼳만]→[꼰만]","꽃만→[꼰만]","꽃만→[꼳만]","꽃만→[꼬만]"],a:0,e:"끝소리규칙(ㅊ→ㄷ)→비음화(ㄷ→ㄴ)"},
+  {id:8,s:"음운",c:"구개음화",q:"구개음화가 일어나지 않는 단어는?",o:["같이","굳이","잔디","해돋이"],a:2,e:"잔디: 하나의 형태소→구개음화 미적용"},
+  {id:9,s:"음운",c:"유음화",q:"유음화가 일어나지 않는 단어는?",o:["난로","훈련","등산로","관람"],a:2,e:"2음절한자+ㄹ한자→ㄹ→ㄴ(예외)"},
+  {id:10,s:"문법",c:"높임표현",q:"\"할아버지, 버스 오셨어요.\" 올바른 표현은?",o:["버스 왔어요","버스 오셨어요","버스가 오셔요","버스 왔습니다"],a:0,e:"버스는 높임대상 아님→-시- 불가"},
+  {id:11,s:"문법",c:"피동표현",q:"\"열려져 있는 창문\" 바르게 고치면?",o:["열려 있는","열린져 있는","열어져 있는","열여진"],a:0,e:"-리-와 -어지다 중복=이중피동"},
+  {id:12,s:"문법",c:"시간표현",q:"\"-겠-\"이 추측/완곡 의미인 것은?",o:["내일 비가 오겠다","제가 하겠습니다","늦겠다","잘 모르겠습니다"],a:3,e:"모르겠습니다=완곡표현"},
+  {id:13,s:"문법",c:"인용표현",q:"\"도서관에 가자\" 간접 인용은?",o:["도서관에 가자고","\"도서관에 가자\"라고","도서관에 가자라고","도서관에 간다고"],a:0,e:"간접인용→조사 '고', 인용부호 없음"},
+  {id:14,s:"음운",c:"복합",q:"\"깨끗한\" 발음 변동 과정은?",o:["깨끋한→깨끄탄","깨끗한→깨끄탄","깨끗한→깨끋한","깨끗한→깨끈한"],a:0,e:"끝소리규칙(ㅅ→ㄷ)→거센소리되기(ㄷ+ㅎ→ㅌ)"}
+];
+
+/* ═══ 개념 ═══ */
+const C1 = [
+  {id:"nas",t:"비음화",i:"🔄",cat:"교체",d:"ㄱ,ㄷ,ㅂ→ㅇ,ㄴ,ㅁ (비음앞)",law:"제18항",dt:"파열음→비음\nㄱ→ㅇ: 국민[궁민], 먹는[멍는]\nㄷ→ㄴ: 듣는다[든는다]\nㅂ→ㅁ: 굽는[굼는], 잡는[잠는]"},
+  {id:"liq",t:"유음화",i:"🔄",cat:"교체",d:"ㄴ→ㄹ (ㄹ앞/뒤)",law:"제20항",dt:"ㄴ→ㄹ\n예: 원리[월리], 훈련[훌련]\n⚠️예외: 2음절한자+ㄹ→ㄹ→ㄴ\n등산로[등산노]"},
+  {id:"pal",t:"구개음화",i:"🔄",cat:"교체",d:"ㄷ,ㅌ+ㅣ(형식형태소)→ㅈ,ㅊ",law:"제17항",dt:"조건 2개:\n①ㄷ,ㅌ+ㅣ 만남\n②ㅣ가 형식형태소\n✅같이[가치]\n❌잔디(형태소내부)"},
+  {id:"for",t:"된소리되기",i:"🔄",cat:"교체",d:"예사소리→된소리",law:"제23~27항",dt:"①ㄱ,ㄷ,ㅂ뒤: 국밥[국빱]\n②어간ㄴ,ㅁ뒤: 신고[신꼬]\n③한자어ㄹ뒤: 발달[발딸]\n④-(으)ㄹ뒤: 갈거야[갈꺼야]"},
+  {id:"ini",t:"두음 법칙",i:"❌",cat:"탈락",d:"한자어 첫머리 ㄴ,ㄹ탈락",law:"맞춤법10~12항",dt:"녀→여: 여자(女子)\n랴→야: 역사(歷史)\n라→나: 낙원(樂園)\n⚠️첫머리 아니면 적용안됨"},
+  {id:"vow",t:"모음 탈락",i:"❌",cat:"탈락",d:"두 모음 연속시 탈락",law:"맞춤법18항",dt:"ㅡ탈락:\n아프-+-아→아파\n잠그-+-아→잠가\n기쁘-+-어서→기뻐서"},
+  {id:"asp",t:"거센소리되기",i:"🔗",cat:"축약",d:"예사소리+ㅎ→거센소리",law:"제12항",dt:"ㅎ+ㄱ→ㅋ: 하얗게[하야케]\nㅎ+ㄷ→ㅌ: 파랗다[파라타]\nㅎ+ㅈ→ㅊ: 놓지[노치]\nㄱ+ㅎ→ㅋ: 축하[추카]"},
+  {id:"syl",t:"음절의 끝소리 규칙",i:"📋",cat:"교체",d:"받침 7개만: ㄱ,ㄴ,ㄷ,ㄹ,ㅁ,ㅂ,ㅇ",law:"제8~9항",dt:"ㄲ,ㅋ→[ㄱ]\nㅅ,ㅆ,ㅈ,ㅊ,ㅌ→[ㄷ]\nㅍ→[ㅂ]\n예: 낮[낟], 꽃[꼳]"}
+];
+const C2 = [
+  {id:"hon",t:"높임 표현",i:"👑",d:"주체·객체·상대 높임",dt:"주체: 께서,-시-,계시다\n객체: 께,드리다,여쭈다\n상대: 하십시오체/해요체 등\n\n⚠️잘못된 예: 버스 오셨어요(✗)"},
+  {id:"ten",t:"시간 표현",i:"⏰",d:"시제+동작상",dt:"과거:-았-/-었-\n현재:-ㄴ-/-는-\n미래:-겠-\n진행:-고있다\n완료:-아/어있다\n⚠️-겠-: 미래/추측/의지/완곡"},
+  {id:"pas",t:"피동 표현",i:"🔀",d:"주어가 동작을 당함",dt:"접미사:-이-,-히-,-리-,-기-\n-되다,-아/어지다\n효과: 객관성, 주체은폐\n⚠️이중피동: 보여지다(✗)→보이다(○)"},
+  {id:"quo",t:"인용 표현",i:"💬",d:"직접(라고)/간접(고)",dt:"직접:\"...\"라고\n간접:...고\n변환시: 인칭·지시·시간 바뀜\n효과: 객관성·신뢰성"},
+  {id:"voc",t:"어휘 선택",i:"📝",d:"고유어·한자어·외래어",dt:"고유어:친근(시끄러우니까)\n한자어:격식(소란,정숙)\n사고도구어: 분석,비교,분류"}
+];
+
+function badgeClass(cat) {
+  if (cat === "교체") return "b-s";
+  if (cat === "축약") return "b-c";
+  if (cat === "탈락") return "b-a";
+  return "b-v";
+}
+
+/* ═══ APP ═══ */
+function App() {
+  const [pg, setPg] = useState("home");
+  const [det, setDet] = useState(null);
+  function openDetail(c) { setDet(c); setPg("dt"); }
+
+  var navItems = [["home","🏠 홈"],["ph","🔤 음운변동"],["gr","📐 문법요소"],["an","🔬 분석기"],["qz","✏️ 퀴즈"],["ai","🤖 AI튜터"]];
+
+  return (
+    <div>
+      <header className="hd">
+        <div className="ctn hdi">
+          <a className="lo" onClick={function(){setPg("home")}}>
+            <div className="lob">PM</div>
+            <div>
+              <div className="lot">Phonology Master</div>
+              <div className="los">공통국어1 · 3단원 · 올바른 언어생활</div>
+            </div>
+          </a>
+          <div className="ts">
+            {navItems.map(function(item) {
+              return <button key={item[0]} className={"tb" + (pg === item[0] ? " on" : "")} onClick={function(){setPg(item[0])}}>{item[1]}</button>;
+            })}
+          </div>
+        </div>
+      </header>
+
+      <main style={{paddingTop:"70px", minHeight:"100vh", paddingBottom:"40px"}}>
+        {pg === "home" && <Home setPg={setPg} openDetail={openDetail} />}
+        {pg === "ph" && <PhPage openDetail={openDetail} />}
+        {pg === "gr" && <GrPage openDetail={openDetail} />}
+        {pg === "an" && <Analyzer />}
+        {pg === "qz" && <QuizPage />}
+        {pg === "ai" && <ChatPage />}
+        {pg === "dt" && det && <DetailPage c={det} back={function(){setPg(det.sec === "01" ? "ph" : "gr")}} />}
+      </main>
+
+      <footer style={{textAlign:"center", padding:"20px", fontSize:".72rem", color:"var(--t3)", borderTop:"1px solid var(--bd)"}}>
+        Phonology Master · 공통국어1 3단원 올바른 언어생활 · Developer: K.G.B
+      </footer>
+    </div>
+  );
+}
+
+/* ═══ HOME ═══ */
+function Home({setPg, openDetail}) {
+  return (
+    <div className="ctn" style={{paddingTop:"32px"}}>
+      <div className="au" style={{textAlign:"center", marginBottom:"40px"}}>
+        <span className="ba b-m" style={{fontSize:".78rem", marginBottom:"8px"}}>📖 미래엔 공통국어1 · 3단원</span>
+        <h1 style={{fontSize:"clamp(1.6rem,4vw,2.5rem)", fontWeight:900, margin:"8px 0", color:"var(--md)"}}>Phonology Master</h1>
+        <p style={{color:"var(--t2)", maxWidth:"480px", margin:"0 auto", lineHeight:1.7, fontSize:".93rem"}}>음운 변동의 원리를 탐구하고, 문법 요소의 표현 효과를 이해하여 바른 언어생활을 실천합시다.</p>
+      </div>
+
+      {!GAS && (
+        <div className="cd au" style={{marginBottom:"18px", borderColor:"var(--amber)", background:"var(--al)", padding:"14px 18px"}}>
+          <b style={{color:"#92400e", fontSize:".9rem"}}>⚙️ 설정 안내</b>
+          <p style={{fontSize:".84rem", color:"#78350f", marginTop:"4px", lineHeight:1.6}}>AI 기능을 사용하려면: ① Code.gs를 GAS에 배포 → ② config.js에 GAS URL 입력. API 키는 GAS에만 저장되어 안전합니다!</p>
+        </div>
+      )}
+
+      <div className="gr g3" style={{marginBottom:"20px"}}>
+        {[["🔤","음운의 변동","비음화·유음화·구개음화·된소리되기·두음법칙·모음탈락·거센소리되기","ph"],
+          ["📐","문법 요소","높임·시간·피동·인용 표현, 어휘 선택","gr"],
+          ["🔬","음운 변동 분석기","단어 입력→변동 과정 분석 (AI 지원)","an"]
+        ].map(function(c, i) {
+          return (
+            <div key={i} className="cd cl au" style={{animationDelay: i * 0.07 + "s"}} onClick={function(){setPg(c[3])}}>
+              <div style={{fontSize:"1.7rem", marginBottom:"4px"}}>{c[0]}</div>
+              <h3 style={{fontWeight:700, fontSize:"1rem", color:"var(--md)", marginBottom:"4px"}}>{c[1]}</h3>
+              <p style={{fontSize:".82rem", color:"var(--t2)", lineHeight:1.5}}>{c[2]}</p>
+              <div style={{marginTop:"10px"}}><span className="btn bs bo">학습하기 →</span></div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="gr g2" style={{marginBottom:"20px"}}>
+        <div className="cd cl au" onClick={function(){setPg("qz")}} style={{display:"flex", alignItems:"center", gap:"10px"}}>
+          <span style={{fontSize:"1.5rem"}}>✏️</span>
+          <div><b>실력 점검 퀴즈</b><p style={{fontSize:".8rem", color:"var(--t2)"}}>14문항·오답복습</p></div>
+        </div>
+        <div className="cd cl au" onClick={function(){setPg("ai")}} style={{display:"flex", alignItems:"center", gap:"10px", animationDelay:".07s"}}>
+          <span style={{fontSize:"1.5rem"}}>🤖</span>
+          <div><b>AI 문법 튜터</b><p style={{fontSize:".8rem", color:"var(--t2)"}}>GAS프록시·키보호</p></div>
+        </div>
+      </div>
+
+      <div className="cd au" style={{animationDelay:".12s"}}>
+        <h3 style={{fontWeight:700, marginBottom:"10px", fontSize:".93rem"}}>📋 음운 변동 유형 한눈에</h3>
+        <div className="gr" style={{gridTemplateColumns:"repeat(auto-fit,minmax(190px,1fr))", gap:"8px"}}>
+          {[["교체","비음화·유음화·구개음화·된소리되기·끝소리규칙","b-s"],["축약","거센소리되기","b-c"],["탈락","모음탈락·자음탈락·두음법칙","b-a"],["첨가","반모음첨가·ㄴ첨가","b-e"]].map(function(g, i) {
+            return (
+              <div key={i} style={{background:"var(--bg2)", padding:"10px 12px", borderRadius:"var(--r)"}}>
+                <span className={"ba " + g[2]}>{g[0]}</span>
+                <p style={{fontSize:".77rem", color:"var(--t2)", marginTop:"6px", lineHeight:1.5}}>{g[1]}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ═══ 음운/문법 탐색 ═══ */
+function PhPage({openDetail}) {
+  return (
+    <div className="ctn" style={{paddingTop:"20px"}}>
+      <h2 style={{fontWeight:800, fontSize:"1.4rem", marginBottom:"18px"}}>01 음운의 변동</h2>
+      <div className="gr ga">
+        {C1.map(function(c, i) {
+          return (
+            <div key={c.id} className="cd cl au" style={{animationDelay: i * 0.04 + "s"}} onClick={function(){openDetail(Object.assign({}, c, {sec:"01"}))}}>
+              <div style={{display:"flex", justifyContent:"space-between"}}><span className={"ba " + badgeClass(c.cat)}>{c.cat}</span><span>{c.i}</span></div>
+              <h3 style={{fontWeight:700, marginTop:"8px", fontSize:".98rem"}}>{c.t}</h3>
+              <p style={{fontSize:".82rem", color:"var(--t2)", marginTop:"3px", lineHeight:1.5}}>{c.d}</p>
+              <div style={{fontSize:".73rem", color:"var(--t3)", marginTop:"8px"}}>📜 {c.law}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function GrPage({openDetail}) {
+  return (
+    <div className="ctn" style={{paddingTop:"20px"}}>
+      <h2 style={{fontWeight:800, fontSize:"1.4rem", marginBottom:"18px"}}>02 상황에 맞게 표현하기</h2>
+      <div className="gr ga">
+        {C2.map(function(c, i) {
+          return (
+            <div key={c.id} className="cd cl au" style={{animationDelay: i * 0.04 + "s"}} onClick={function(){openDetail(Object.assign({}, c, {sec:"02"}))}}>
+              <span style={{fontSize:"1.5rem"}}>{c.i}</span>
+              <h3 style={{fontWeight:700, marginTop:"6px", fontSize:".98rem"}}>{c.t}</h3>
+              <p style={{fontSize:".82rem", color:"var(--t2)", marginTop:"3px", lineHeight:1.5}}>{c.d}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ═══ 상세 ═══ */
+function DetailPage({c, back}) {
+  var examples = Object.entries(DB).filter(function(entry) {
+    return entry[1].sub === c.t || (c.id === "syl" && entry[1].sub === "끝소리규칙");
+  });
+  return (
+    <div className="ctn" style={{paddingTop:"20px", maxWidth:"760px"}}>
+      <button onClick={back} className="btn bg2 bs" style={{marginBottom:"12px"}}>← 돌아가기</button>
+      <div className="cd au" style={{marginBottom:"16px"}}>
+        <div style={{display:"flex", alignItems:"center", gap:"10px", marginBottom:"10px"}}>
+          <span style={{fontSize:"1.8rem"}}>{c.i}</span>
+          <div>
+            {c.cat && <span className={"ba " + badgeClass(c.cat)}>{c.cat}</span>}
+            <h2 style={{fontWeight:800, fontSize:"1.3rem", marginTop:"2px"}}>{c.t}</h2>
+          </div>
+        </div>
+        {c.law && <p style={{fontSize:".82rem", color:"var(--mint)", marginBottom:"10px"}}>📜 {c.law}</p>}
+        <div style={{whiteSpace:"pre-wrap", lineHeight:1.85, fontSize:".92rem", background:"var(--bg2)", padding:"16px", borderRadius:"var(--r)"}}>{c.dt}</div>
+      </div>
+      {examples.length > 0 && (
+        <div className="cd au" style={{animationDelay:".06s"}}>
+          <h3 style={{fontWeight:700, marginBottom:"12px", fontSize:".93rem"}}>📝 교과서 예시</h3>
+          {examples.map(function(entry, i) {
+            var w = entry[0], d = entry[1];
+            return (
+              <div key={i} style={{marginBottom:"12px"}}>
+                <div style={{fontWeight:700, marginBottom:"5px", fontSize:".93rem"}}>{w} → [{d.p}]</div>
+                {d.st.map(function(s, j) {
+                  return (
+                    <div key={j} className="st au" style={{animationDelay: j * 0.1 + "s"}}>
+                      <span className="sf">{s.f}</span><span className="sa">→</span><span className="stt">{s.t}</span><span className="sr">{s.r}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ═══ 분석기 ═══ */
+function Analyzer() {
+  const [inp, setInp] = useState("");
+  const [res, setRes] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [isAI, setIsAI] = useState(false);
+  const [animStep, setAnimStep] = useState(-1);
+
+  async function run() {
+    var w = inp.trim(); if (!w) return;
+    setRes(null); setLoading(true); setIsAI(false); setAnimStep(-1);
+    if (DB[w]) {
+      var d = DB[w];
+      setRes({w:w, p:d.p, ty:d.ty, sub:d.sub, st:d.st, law:d.law});
+      d.st.forEach(function(_, i) { setTimeout(function(){setAnimStep(i)}, (i+1)*350); });
+      setLoading(false); return;
+    }
+    if (GAS) {
+      setIsAI(true);
+      var r = await gasCall("analyze", {word: w});
+      if (r && r.ok && r.data) {
+        var result = {w:w, p:r.data.pronunciation, ty:r.data.type, sub:r.data.subType, st:r.data.steps||[], law:r.data.law, exp:r.data.explanation};
+        setRes(result);
+        (result.st||[]).forEach(function(_, i) { setTimeout(function(){setAnimStep(i)}, (i+1)*350); });
+      } else if (r && r.ok && r.text) {
+        setRes({w:w, txt:r.text});
+      } else {
+        setRes({w:w, none:true});
+      }
+    } else {
+      setRes({w:w, none:true, noGas:true});
+    }
+    setLoading(false);
+  }
+
+  var quicks = ["굽는","원리","같이","막국수","파랗다","아파","꽃만","깨끗한","등산로","축하","놓고","논리"];
+
+  return (
+    <div className="ctn" style={{paddingTop:"20px", maxWidth:"760px"}}>
+      <h2 style={{fontWeight:800, fontSize:"1.4rem", marginBottom:"5px"}}>🔬 음운 변동 분석기</h2>
+      <p style={{color:"var(--t2)", fontSize:".87rem", marginBottom:"16px"}}>단어를 입력하면 변동 과정을 분석합니다.{GAS ? " 모든 단어 AI 분석 가능!" : ""}</p>
+      <div className="cd" style={{marginBottom:"16px"}}>
+        <div style={{display:"flex", gap:"8px", marginBottom:"10px"}}>
+          <input className="inp" value={inp} onChange={function(e){setInp(e.target.value)}} onKeyDown={function(e){if(e.key==="Enter")run()}} placeholder="분석할 단어 (예: 굽는, 꽃만)" style={{flex:1}} />
+          <button className="btn bm" onClick={run} disabled={loading}>{loading ? "분석중..." : "분석 🔍"}</button>
+        </div>
+        <div style={{display:"flex", flexWrap:"wrap", gap:"4px"}}>
+          {quicks.map(function(w) { return <button key={w} className="btn bx bg2" style={{border:"1px solid var(--bd)"}} onClick={function(){setInp(w)}}>{w}</button>; })}
+        </div>
+      </div>
+      {loading && <div className="cd" style={{textAlign:"center", padding:"32px"}}><div className="ld"><span></span><span></span><span></span></div><p style={{color:"var(--t3)", marginTop:"8px"}}>AI 분석 중...</p></div>}
+      {res && !res.none && !res.txt && (
+        <div className="cd au">
+          <div style={{display:"flex", justifyContent:"space-between", flexWrap:"wrap", gap:"6px", marginBottom:"12px"}}>
+            <div>
+              <h3 style={{fontWeight:800, fontSize:"1.2rem"}}>{res.w} → [{res.p}]</h3>
+              <div style={{display:"flex", gap:"5px", marginTop:"5px", flexWrap:"wrap"}}>
+                <span className={"ba " + badgeClass(res.ty)}>{res.ty}</span>
+                <span className="ba b-m">{res.sub}</span>
+                {isAI && <span className="ba b-v">🤖 AI</span>}
+              </div>
+            </div>
+            <span style={{fontSize:".77rem", color:"var(--t3)"}}>📜 {res.law}</span>
+          </div>
+          {res.exp && <p style={{fontSize:".86rem", color:"var(--t2)", padding:"10px 12px", background:"var(--bg2)", borderRadius:"var(--r)", marginBottom:"10px", lineHeight:1.6}}>{res.exp}</p>}
+          <h4 style={{fontWeight:600, color:"var(--md)", fontSize:".87rem", marginBottom:"7px"}}>변동 과정</h4>
+          {(res.st || []).map(function(s, i) {
+            return (
+              <div key={i} className="st" style={{opacity: animStep >= i ? 1 : 0.15, transform: animStep >= i ? "none" : "translateX(-5px)", transition:"all .3s"}}>
+                <span className="sf">{s.f || s.from}</span><span className="sa">→</span><span className="stt">{s.t || s.to}</span><span className="sr">{s.r || s.rule}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {res && res.txt && <div className="cd au"><span className="ba b-v" style={{marginBottom:"8px"}}>🤖 AI 분석</span><div style={{whiteSpace:"pre-wrap", lineHeight:1.7, fontSize:".9rem"}}>{res.txt}</div></div>}
+      {res && res.none && <div className="cd au" style={{textAlign:"center", padding:"24px"}}><span style={{fontSize:"1.5rem"}}>🤔</span><p style={{color:"var(--t2)", marginTop:"6px"}}>"{res.w}" 분석 결과 없음</p>{res.noGas && <p style={{fontSize:".82rem", color:"var(--t3)", marginTop:"4px"}}>config.js에 GAS URL 설정→AI 분석 가능</p>}</div>}
+    </div>
+  );
+}
+
+/* ═══ 퀴즈 ═══ */
+function QuizPage() {
+  const [ci, setCi] = useState(0);
+  const [sel, setSel] = useState(null);
+  const [done, setDone] = useState(false);
+  const [score, setScore] = useState(0);
+  const [finished, setFinished] = useState(false);
+  const [log, setLog] = useState([]);
+  const [filter, setFilter] = useState("all");
+
+  var qs = filter === "all" ? QZ : QZ.filter(function(q){ return q.s === (filter === "음운" ? "음운" : "문법"); });
+  var q = qs[ci];
+
+  function pick(i) { if (done) return; setSel(i); setDone(true); if (i === q.a) setScore(function(s){return s+1}); setLog(function(l){return l.concat([{id:q.id, ok:i===q.a}])}); }
+  function next() { if (ci + 1 >= qs.length) setFinished(true); else { setCi(function(c){return c+1}); setSel(null); setDone(false); } }
+  function reset() { setCi(0); setSel(null); setDone(false); setScore(0); setFinished(false); setLog([]); }
+
+  if (finished) {
+    var pct = Math.round(score / qs.length * 100);
+    var wrongs = log.filter(function(l){return !l.ok}).map(function(l){return qs.find(function(q2){return q2.id===l.id})}).filter(Boolean);
+    return (
+      <div className="ctn" style={{paddingTop:"28px", maxWidth:"560px", textAlign:"center"}}>
+        <div className="cd au">
+          <div style={{fontSize:"2.5rem", marginBottom:"8px"}}>{pct >= 80 ? "🎉" : pct >= 60 ? "👍" : "📚"}</div>
+          <h2 style={{fontWeight:800, fontSize:"1.4rem"}}>퀴즈 완료!</h2>
+          <div style={{fontSize:"1.8rem", fontWeight:900, color:"var(--mint)", margin:"6px 0"}}>{score}/{qs.length}</div>
+          <div className="pb" style={{marginBottom:"14px"}}><div style={{width: pct + "%"}}></div></div>
+          <p style={{color:"var(--t2)", marginBottom:"18px"}}>{pct >= 80 ? "훌륭! 🎉" : pct >= 60 ? "잘했어요!" : "다시 도전!"}</p>
+          {wrongs.length > 0 && (
+            <div style={{textAlign:"left", marginBottom:"14px"}}>
+              <h4 style={{fontWeight:700, color:"var(--rose)", marginBottom:"7px", fontSize:".88rem"}}>❌ 틀린 문제</h4>
+              {wrongs.map(function(w, i) {
+                return (
+                  <div key={i} style={{background:"var(--bg2)", padding:"10px", borderRadius:"var(--r)", marginBottom:"5px", fontSize:".84rem"}}>
+                    <div style={{fontWeight:600}}>{w.q}</div>
+                    <div style={{color:"var(--emerald)", marginTop:"2px"}}>✅ {w.o[w.a]}</div>
+                    <div style={{color:"var(--t3)", marginTop:"1px"}}>{w.e}</div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+          <button className="btn bm" onClick={reset}>다시 도전 🔄</button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!q) return null;
+
+  return (
+    <div className="ctn" style={{paddingTop:"20px", maxWidth:"640px"}}>
+      <h2 style={{fontWeight:800, fontSize:"1.4rem", marginBottom:"10px"}}>✏️ 실력 점검 퀴즈</h2>
+      <div style={{display:"flex", gap:"5px", marginBottom:"16px"}}>
+        {["all","음운","문법"].map(function(f) { return <button key={f} className={"btn bs " + (filter === f ? "bm" : "bo")} onClick={function(){setFilter(f);reset()}}>{f === "all" ? "전체" : f === "음운" ? "음운 변동" : "문법 요소"}</button>; })}
+      </div>
+      <div style={{display:"flex", justifyContent:"space-between", marginBottom:"6px"}}>
+        <span className="ba b-s">Q{ci+1}/{qs.length}</span>
+        <span className="ba b-e">점수 {score}</span>
+      </div>
+      <div className="pb" style={{marginBottom:"16px"}}><div style={{width: (ci / qs.length * 100) + "%"}}></div></div>
+      <div className="cd au" key={q.id}>
+        <div style={{display:"flex", gap:"4px", marginBottom:"8px"}}>
+          <span className="ba b-v">{q.s === "음운" ? "음운변동" : "문법요소"}</span>
+          <span className="ba b-m">{q.c}</span>
+        </div>
+        <h3 style={{fontWeight:700, fontSize:"1rem", marginBottom:"14px", lineHeight:1.65}}>{q.q}</h3>
+        {q.o.map(function(opt, i) {
+          var cls = "qo" + (done ? " dn" : "") + (done && i === q.a ? " ok" : "") + (done && sel === i && i !== q.a ? " ng" : "");
+          return <button key={i} onClick={function(){pick(i)}} className={cls}><span style={{fontWeight:700, marginRight:"6px", opacity:.35}}>{"①②③④"[i]}</span>{opt}</button>;
+        })}
+        {done && (
+          <div className="au" style={{marginTop:"12px", padding:"12px", background: sel === q.a ? "var(--el)" : "var(--rl)", borderRadius:"var(--r)", border:"1px solid " + (sel === q.a ? "var(--emerald)" : "var(--rose)")}}>
+            <b style={{color: sel === q.a ? "var(--emerald)" : "var(--rose)"}}>{sel === q.a ? "✅ 정답!" : "❌ 오답"}</b>
+            <p style={{fontSize:".86rem", lineHeight:1.6, marginTop:"3px"}}>{q.e}</p>
+          </div>
+        )}
+        {done && <div style={{marginTop:"10px", textAlign:"right"}}><button className="btn bm" onClick={next}>{ci + 1 >= qs.length ? "결과보기" : "다음 →"}</button></div>}
+      </div>
+    </div>
+  );
+}
+
+/* ═══ AI 채팅 ═══ */
+function ChatPage() {
+  const [msgs, setMsgs] = useState([{r:"a", t:"안녕하세요! 📖 국어 문법 AI 튜터입니다.\n\n3단원 내용에 대해 무엇이든 질문해 주세요!"}]);
+  const [inp, setInp] = useState("");
+  const [busy, setBusy] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(function() { if (ref.current) ref.current.scrollTop = ref.current.scrollHeight; }, [msgs]);
+
+  async function send() {
+    if (!inp.trim() || busy) return;
+    var q = inp.trim(); setInp(""); setBusy(true);
+    setMsgs(function(m) { return m.concat([{r:"u", t:q}]); });
+
+    var wm = Object.keys(DB).find(function(w) { return q.indexOf(w) >= 0; });
+    if (wm) {
+      var d = DB[wm];
+      var a = "📝 \"" + wm + "\" 분석:\n발음: [" + d.p + "] | " + d.ty + "(" + d.sub + ") | " + d.law + "\n\n";
+      d.st.forEach(function(s, i) { a += (i+1) + ". " + s.f + " → " + s.t + " (" + s.r + ")\n"; });
+      setMsgs(function(m) { return m.concat([{r:"a", t:a}]); });
+    }
+
+    if (GAS) {
+      var r = await gasCall("chat", {q: q});
+      if (r && r.ok) { setMsgs(function(m) { return m.concat([{r:"a", t:r.answer}]); }); }
+      else if (!wm) { setMsgs(function(m) { return m.concat([{r:"a", t:"⚠️ 응답 실패. GAS 배포 상태를 확인해 주세요."}]); }); }
+    } else if (!wm) {
+      setMsgs(function(m) { return m.concat([{r:"a", t:"⚠️ AI 사용하려면:\n1️⃣ Code.gs를 GAS에 배포\n2️⃣ config.js에 GAS URL 입력\n\n분석기에서 교과서 예시는 바로 확인 가능!"}]); });
+    }
+    setBusy(false);
+  }
+
+  var quickQs = ["\"굽는\"에서 왜 비음화?","구개음화 조건이 뭐야?","피동표현 효과는?","높임표현 종류"];
+
+  return (
+    <div className="ctn" style={{paddingTop:"20px", maxWidth:"720px"}}>
+      <h2 style={{fontWeight:800, fontSize:"1.4rem", marginBottom:"8px"}}>🤖 AI 문법 튜터</h2>
+      {!GAS && <div style={{marginBottom:"10px", padding:"10px 12px", background:"var(--al)", borderRadius:"var(--r)", fontSize:".82rem", color:"#92400e", border:"1px solid var(--amber)"}}>⚠️ Code.gs → GAS 배포 → config.js에 URL 입력 (API 키는 GAS에 안전 보관)</div>}
+      <div style={{display:"flex", flexWrap:"wrap", gap:"4px", marginBottom:"8px"}}>
+        {quickQs.map(function(q, i) { return <button key={i} className="btn bx bg2" style={{border:"1px solid var(--bd)"}} onClick={function(){setInp(q)}}>{q}</button>; })}
+      </div>
+      <div className="cb">
+        <div className="cms" ref={ref}>
+          {msgs.map(function(m, i) {
+            return <div key={i} className={"bu " + (m.r === "u" ? "u" : "ai") + " au"}><div style={{whiteSpace:"pre-wrap"}}>{m.t}</div></div>;
+          })}
+          {busy && <div className="bu ai"><span className="ld"><span></span><span></span><span></span></span> 생각 중...</div>}
+        </div>
+        <div className="cft">
+          <input className="inp" value={inp} onChange={function(e){setInp(e.target.value)}} onKeyDown={function(e){if(e.key==="Enter")send()}} placeholder="문법 질문을 입력하세요..." style={{flex:1}} />
+          <button className="btn bm" onClick={send} disabled={busy}>전송</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+</script>
+</body>
+</html>
